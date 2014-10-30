@@ -5,3 +5,5 @@ build
 example
 documentation
 .*
+brightcove.xcodeproj/project.xcworkspace
+brightcove.xcodeproj/xcuserdata

@@ -1,0 +1,3 @@
+[submodule "iphone/vendor/brightcove-player-sdk-ios"]
+	path = iphone/vendor/brightcove-player-sdk-ios
+	url = https://github.com/brightcove/brightcove-player-sdk-ios.git
