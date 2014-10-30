@@ -1,0 +1,17 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+description: brightcove
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2014 by Your Company
+
+# these should not be edited
+name: brightcove
+moduleid: com.appersonlabs.brightcove
+guid: 7e39fe52-e58f-49f1-962b-3a244b41f227
+platform: iphone
+minsdk: 3.4.0.GA
