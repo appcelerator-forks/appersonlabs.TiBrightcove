@@ -28,6 +28,10 @@
 		24DE9E1211C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		DAD9940C1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD9940A1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h */; };
+		DAD9940D1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */; };
+		DAD994101A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */; };
+		DAD994111A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9940F1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m */; };
 		DAE535521A02DCEA0016088C /* BCOVBasicSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535411A02DCEA0016088C /* BCOVBasicSessionProvider.h */; };
 		DAE535531A02DCEA0016088C /* BCOVCatalogConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535421A02DCEA0016088C /* BCOVCatalogConstants.h */; };
 		DAE535541A02DCEA0016088C /* BCOVCatalogService.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535431A02DCEA0016088C /* BCOVCatalogService.h */; };
@@ -70,6 +74,10 @@
 		AA747D9E0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComAppersonlabsBrightcove_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComAppersonlabsBrightcove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComAppersonlabsBrightcove.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAD9940A1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComAppersonlabsBrightcovePlayerViewProxy.h; path = Classes/ComAppersonlabsBrightcovePlayerViewProxy.h; sourceTree = "<group>"; };
+		DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcovePlayerViewProxy.m; path = Classes/ComAppersonlabsBrightcovePlayerViewProxy.m; sourceTree = "<group>"; };
+		DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComAppersonlabsBrightcovePlayerView.h; path = Classes/ComAppersonlabsBrightcovePlayerView.h; sourceTree = "<group>"; };
+		DAD9940F1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcovePlayerView.m; path = Classes/ComAppersonlabsBrightcovePlayerView.m; sourceTree = "<group>"; };
 		DAE535411A02DCEA0016088C /* BCOVBasicSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVBasicSessionProvider.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVBasicSessionProvider.h"; sourceTree = "<group>"; };
 		DAE535421A02DCEA0016088C /* BCOVCatalogConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCatalogConstants.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCatalogConstants.h"; sourceTree = "<group>"; };
 		DAE535431A02DCEA0016088C /* BCOVCatalogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCatalogService.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCatalogService.h"; sourceTree = "<group>"; };
@@ -148,6 +156,10 @@
 				24DE9E1011C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* ComAppersonlabsBrightcoveModule.h */,
 				24DD6CF81134B3F500162E58 /* ComAppersonlabsBrightcoveModule.m */,
+				DAD9940A1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h */,
+				DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */,
+				DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */,
+				DAD9940F1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -197,6 +209,7 @@
 				DAE535531A02DCEA0016088C /* BCOVCatalogConstants.h in Headers */,
 				DAE535601A02DCEA0016088C /* BCOVSource.h in Headers */,
 				DAE535541A02DCEA0016088C /* BCOVCatalogService.h in Headers */,
+				DAD9940C1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h in Headers */,
 				DAE5355B1A02DCEA0016088C /* BCOVPlaybackSession.h in Headers */,
 				DAE5355A1A02DCEA0016088C /* BCOVPlaybackController.h in Headers */,
 				DAE535591A02DCEA0016088C /* BCOVMediaRequestFactory.h in Headers */,
@@ -208,6 +221,7 @@
 				DAE5355F1A02DCEA0016088C /* BCOVPlaylist.h in Headers */,
 				DAE535611A02DCEA0016088C /* BCOVVideo.h in Headers */,
 				DAE5355C1A02DCEA0016088C /* BCOVPlaybackSessionProvider.h in Headers */,
+				DAD994101A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.h in Headers */,
 				DAE535571A02DCEA0016088C /* BCOVCuePointProgressPolicy.h in Headers */,
 				DAE535521A02DCEA0016088C /* BCOVBasicSessionProvider.h in Headers */,
@@ -284,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD9940D1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* ComAppersonlabsBrightcoveModule.m in Sources */,
+				DAD994111A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
