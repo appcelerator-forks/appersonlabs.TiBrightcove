@@ -7,15 +7,18 @@
 
 #import "ComAppersonlabsBrightcovePlayerViewProxy.h"
 #import "ComAppersonlabsBrightcovePlayerView.h"
+#import "PlaylistProxy.h"
 #import "TiUtils.h"
 
 @interface ComAppersonlabsBrightcovePlayerViewProxy ()
 @property (nonatomic, readonly) id<BCOVPlaybackController> playbackController;
 @property (nonatomic, strong) id<BCOVPlaybackSession> currentPlaybackSession;
-@property (nonatomic, strong) BCOVCatalogService * catalogService;
 @end
 
 @implementation ComAppersonlabsBrightcovePlayerViewProxy
+
+USE_VIEW_FOR_CONTENT_WIDTH
+USE_VIEW_FOR_CONTENT_HEIGHT
 
 @synthesize playbackController=_playbackController;
 
@@ -29,25 +32,25 @@
     return _playbackController;
 }
 
+-(void)_initWithProperties:(NSDictionary *)properties {
+    // check for any required parameters
+    [super _initWithProperties:properties];
+}
+
 #pragma mark -
 #pragma mark Public API
 
-- (void)setToken:(id)value {
-    self.catalogService = [[BCOVCatalogService alloc] initWithToken:value];
+- (void)setPlaylist:(id)value {
+    ENSURE_TYPE_OR_NIL(value, PlaylistProxy)
+    if (value) {
+        PlaylistProxy * proxy = (PlaylistProxy *)value;
+        [self.playbackController setVideos:proxy.playlist.videos];
+    }
+    // TODO maybe nil should mean clear playlist?
 }
 
-- (void)setPlaylistID:(id)value {
-    // @"3868842075001"
-    [self.catalogService findPlaylistWithPlaylistID:value parameters:nil completion:^(BCOVPlaylist *playlist, NSDictionary *jsonResponse, NSError *error) {
-        if (error) {
-            NSLog(@"[ERROR] error setting playlist ID: %@", error);
-            return;
-        }
-        
-        if (playlist) {
-            [self.playbackController setVideos:playlist.videos];
-        }
-    }];
+- (void)setVideo:(id)value {
+    // should be a video proxy
 }
 
 - (void)advanceToNext:(id)args {
