@@ -5,12 +5,12 @@
  * Please see the LICENSE included with this distribution for details.
  */
 
-#import "PlaylistProxy.h"
+#import "VideoProxy.h"
 
-@implementation PlaylistProxy
+@implementation VideoProxy
 
 + (instancetype)proxyWithCatalog:(ComAppersonlabsBrightcoveCatalogProxy *)catalog {
-    return [[[PlaylistProxy alloc] _initWithPageContext:catalog.pageContext] autorelease];
+    return [[[VideoProxy alloc] _initWithPageContext:catalog.pageContext] autorelease];
 }
 
 #pragma mark -

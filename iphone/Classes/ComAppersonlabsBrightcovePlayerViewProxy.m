@@ -8,6 +8,7 @@
 #import "ComAppersonlabsBrightcovePlayerViewProxy.h"
 #import "ComAppersonlabsBrightcovePlayerView.h"
 #import "PlaylistProxy.h"
+#import "VideoProxy.h"
 #import "TiUtils.h"
 
 @interface ComAppersonlabsBrightcovePlayerViewProxy ()
@@ -50,7 +51,11 @@ USE_VIEW_FOR_CONTENT_HEIGHT
 }
 
 - (void)setVideo:(id)value {
-    // should be a video proxy
+    ENSURE_TYPE_OR_NIL(value, VideoProxy)
+    if (value) {
+        VideoProxy * proxy = (VideoProxy *)value;
+        [self.playbackController setVideos:@[proxy.video]];
+    }
 }
 
 - (void)advanceToNext:(id)args {

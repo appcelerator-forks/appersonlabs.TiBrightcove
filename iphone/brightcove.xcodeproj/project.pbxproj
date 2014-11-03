@@ -32,6 +32,8 @@
 		DAD831AB1A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD831A91A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.m */; };
 		DAD831AE1A07F04E0073CBE5 /* PlaylistProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD831AC1A07F04E0073CBE5 /* PlaylistProxy.h */; };
 		DAD831AF1A07F04E0073CBE5 /* PlaylistProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD831AD1A07F04E0073CBE5 /* PlaylistProxy.m */; };
+		DAD831B41A0809E30073CBE5 /* VideoProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD831B21A0809E30073CBE5 /* VideoProxy.h */; };
+		DAD831B51A0809E30073CBE5 /* VideoProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD831B31A0809E30073CBE5 /* VideoProxy.m */; };
 		DAD9940C1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD9940A1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h */; };
 		DAD9940D1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */; };
 		DAD994101A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */; };
@@ -82,6 +84,8 @@
 		DAD831A91A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcoveCatalogProxy.m; path = Classes/ComAppersonlabsBrightcoveCatalogProxy.m; sourceTree = "<group>"; };
 		DAD831AC1A07F04E0073CBE5 /* PlaylistProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaylistProxy.h; path = Classes/PlaylistProxy.h; sourceTree = "<group>"; };
 		DAD831AD1A07F04E0073CBE5 /* PlaylistProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaylistProxy.m; path = Classes/PlaylistProxy.m; sourceTree = "<group>"; };
+		DAD831B21A0809E30073CBE5 /* VideoProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoProxy.h; path = Classes/VideoProxy.h; sourceTree = "<group>"; };
+		DAD831B31A0809E30073CBE5 /* VideoProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoProxy.m; path = Classes/VideoProxy.m; sourceTree = "<group>"; };
 		DAD9940A1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComAppersonlabsBrightcovePlayerViewProxy.h; path = Classes/ComAppersonlabsBrightcovePlayerViewProxy.h; sourceTree = "<group>"; };
 		DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcovePlayerViewProxy.m; path = Classes/ComAppersonlabsBrightcovePlayerViewProxy.m; sourceTree = "<group>"; };
 		DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComAppersonlabsBrightcovePlayerView.h; path = Classes/ComAppersonlabsBrightcovePlayerView.h; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				DAD831A91A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.m */,
 				DAD831AC1A07F04E0073CBE5 /* PlaylistProxy.h */,
 				DAD831AD1A07F04E0073CBE5 /* PlaylistProxy.m */,
+				DAD831B21A0809E30073CBE5 /* VideoProxy.h */,
+				DAD831B31A0809E30073CBE5 /* VideoProxy.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 				DAD831AA1A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.h in Headers */,
 				DAD9940C1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h in Headers */,
 				DAE5355B1A02DCEA0016088C /* BCOVPlaybackSession.h in Headers */,
+				DAD831B41A0809E30073CBE5 /* VideoProxy.h in Headers */,
 				DAE5355A1A02DCEA0016088C /* BCOVPlaybackController.h in Headers */,
 				DAE535591A02DCEA0016088C /* BCOVMediaRequestFactory.h in Headers */,
 				DAE535581A02DCEA0016088C /* BCOVDelegatingSessionConsumer.h in Headers */,
@@ -316,6 +323,7 @@
 				DAD9940D1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* ComAppersonlabsBrightcoveModule.m in Sources */,
 				DAD831AB1A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.m in Sources */,
+				DAD831B51A0809E30073CBE5 /* VideoProxy.m in Sources */,
 				DAD994111A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m in Sources */,
 				DAD831AF1A07F04E0073CBE5 /* PlaylistProxy.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m in Sources */,

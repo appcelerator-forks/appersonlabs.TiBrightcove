@@ -10,8 +10,6 @@ var player = brightcove.createPlayerView({
   left: 20,
   width: 200,
   height: 200,
-  // token: 'RNj-yS616_T1GQ4znMqS3ut3ijXuGrG69w3oYJBMVahURwi7P4ZH4Q..',
-  // playlistID: '3868842075001',
 });
 
 var playButton = Ti.UI.createButton({
@@ -42,16 +40,32 @@ var toolbar = Ti.UI.iOS.createToolbar({
   borderBottom: false,
 });
 
+var videoButton = Ti.UI.createButton({
+  bottom: 48,
+  title: 'Load Video',
+});
+videoButton.addEventListener('click', function() {
+  catalog.findVideo('3873079666001', function(e) {
+    if (e.success) {
+      player.video = e.result;
+      Ti.API.info("set video");
+    }
+    else {
+      Ti.API.error(e.error);
+    }
+  })
+});
+
 var win = Ti.UI.createWindow({
 	backgroundColor:'white'
 });
 
 win.add(player);
 win.add(toolbar);
+win.add(videoButton);
 
 win.addEventListener('open', function(e) {
-  catalog.findPlaylist('3868842075001', {}, function(e) {
-    Ti.API.info(JSON.stringify(e));
+  catalog.findPlaylist('3868842075001', function(e) {
     if (e.success) {
       player.playlist = e.result;
       Ti.API.info("set playlist");
