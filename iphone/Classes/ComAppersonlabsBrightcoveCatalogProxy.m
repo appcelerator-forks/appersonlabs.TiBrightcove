@@ -77,7 +77,7 @@
 #pragma mark -
 #pragma mark Public API
 
-- (void)findPlaylist:(id)args {
+- (void)findPlaylistWithPlaylistID:(id)args {
     NSString * playlistID = nil;
     KrollCallback * cb = nil;
     NSDictionary * params = nil;
@@ -99,7 +99,31 @@
     }];
 }
 
-- (void)findVideo:(id)args {
+
+- (void)findPlaylistWithReferenceID:(id)args {
+    NSString * refID = nil;
+    KrollCallback * cb = nil;
+    NSDictionary * params = nil;
+    ENSURE_ARG_AT_INDEX(refID, args, 0, NSString);
+    ENSURE_ARG_AT_INDEX(cb, args, 1, KrollCallback);
+    ENSURE_ARG_OR_NIL_AT_INDEX(params, args, 2, NSDictionary);
+    
+    __block PlaylistProxy * proxy = [PlaylistProxy proxyWithCatalog:self];
+    [self.catalogService findPlaylistWithReferenceID:refID parameters:params completion:^(BCOVPlaylist *playlist, NSDictionary *jsonResponse, NSError *error) {
+        NSDictionary * cbresp;
+        if (playlist) {
+            proxy.playlist = playlist;
+            cbresp = [self _constructCallbackSuccessResponse:proxy];
+        }
+        else {
+            cbresp = [self _constructCallbackErrorResponse:error];
+        }
+        [cb call:@[cbresp] thisObject:nil];
+    }];
+    
+}
+
+- (void)findVideoWithVideoID:(id)args {
     NSString * videoID = nil;
     KrollCallback * cb = nil;
     NSDictionary * params = nil;
@@ -109,6 +133,28 @@
     
     __block VideoProxy * proxy = [VideoProxy proxyWithCatalog:self];
     [self.catalogService findVideoWithVideoID:videoID parameters:params completion:^(BCOVVideo *video, NSDictionary *jsonResponse, NSError *error) {
+        NSDictionary * cbresp;
+        if (video) {
+            proxy.video = video;
+            cbresp = [self _constructCallbackSuccessResponse:proxy];
+        }
+        else {
+            cbresp = [self _constructCallbackErrorResponse:error];
+        }
+        [cb call:@[cbresp] thisObject:nil];
+    }];
+}
+
+- (void)findVideoWithReferenceID:(id)args {
+    NSString * refID = nil;
+    KrollCallback * cb = nil;
+    NSDictionary * params = nil;
+    ENSURE_ARG_AT_INDEX(refID, args, 0, NSString);
+    ENSURE_ARG_AT_INDEX(cb, args, 1, KrollCallback);
+    ENSURE_ARG_OR_NIL_AT_INDEX(params, args, 2, NSDictionary);
+    
+    __block VideoProxy * proxy = [VideoProxy proxyWithCatalog:self];
+    [self.catalogService findVideoWithReferenceID:refID parameters:params completion:^(BCOVVideo *video, NSDictionary *jsonResponse, NSError *error) {
         NSDictionary * cbresp;
         if (video) {
             proxy.video = video;
