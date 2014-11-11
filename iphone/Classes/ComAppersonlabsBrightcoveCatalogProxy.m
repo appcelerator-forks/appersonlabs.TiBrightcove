@@ -85,17 +85,20 @@
     ENSURE_ARG_AT_INDEX(cb, args, 1, KrollCallback);
     ENSURE_ARG_OR_NIL_AT_INDEX(params, args, 2, NSDictionary);
     
-    __block PlaylistProxy * proxy = [PlaylistProxy proxyWithCatalog:self];
     [self.catalogService findPlaylistWithPlaylistID:playlistID parameters:params completion:^(BCOVPlaylist *playlist, NSDictionary *jsonResponse, NSError *error) {
         NSDictionary * cbresp;
+        NSString * type;
         if (playlist) {
-            proxy.playlist = playlist;
-            cbresp = [self _constructCallbackSuccessResponse:proxy];
+            PlaylistProxy * proxy = [PlaylistProxy proxyWithCatalog:self playlist:playlist];
+            type = @"success";
+            cbresp = @{ @"result": proxy };
         }
         else {
-            cbresp = [self _constructCallbackErrorResponse:error];
+            type = @"error";
+            cbresp = @{ @"code": NUMLONG(error.code), @"error": error.localizedDescription };
         }
-        [cb call:@[cbresp] thisObject:nil];
+        
+        [self _fireEventToListener:type withObject:cbresp listener:cb thisObject:nil];
     }];
 }
 
@@ -108,17 +111,20 @@
     ENSURE_ARG_AT_INDEX(cb, args, 1, KrollCallback);
     ENSURE_ARG_OR_NIL_AT_INDEX(params, args, 2, NSDictionary);
     
-    __block PlaylistProxy * proxy = [PlaylistProxy proxyWithCatalog:self];
     [self.catalogService findPlaylistWithReferenceID:refID parameters:params completion:^(BCOVPlaylist *playlist, NSDictionary *jsonResponse, NSError *error) {
         NSDictionary * cbresp;
+        NSString * type;
         if (playlist) {
-            proxy.playlist = playlist;
-            cbresp = [self _constructCallbackSuccessResponse:proxy];
+            PlaylistProxy * proxy = [PlaylistProxy proxyWithCatalog:self playlist:playlist];
+            type = @"success";
+            cbresp = @{ @"result": proxy };
         }
         else {
-            cbresp = [self _constructCallbackErrorResponse:error];
+            type = @"error";
+            cbresp = @{ @"code": NUMLONG(error.code), @"error": error.localizedDescription };
         }
-        [cb call:@[cbresp] thisObject:nil];
+        
+        [self _fireEventToListener:type withObject:cbresp listener:cb thisObject:nil];
     }];
     
 }
@@ -131,17 +137,20 @@
     ENSURE_ARG_AT_INDEX(cb, args, 1, KrollCallback);
     ENSURE_ARG_OR_NIL_AT_INDEX(params, args, 2, NSDictionary);
     
-    __block VideoProxy * proxy = [VideoProxy proxyWithCatalog:self];
     [self.catalogService findVideoWithVideoID:videoID parameters:params completion:^(BCOVVideo *video, NSDictionary *jsonResponse, NSError *error) {
         NSDictionary * cbresp;
+        NSString * type;
         if (video) {
-            proxy.video = video;
-            cbresp = [self _constructCallbackSuccessResponse:proxy];
+            VideoProxy * proxy = [VideoProxy proxyWithCatalog:self video:video];
+            type = @"success";
+            cbresp = @{ @"result": proxy };
         }
         else {
-            cbresp = [self _constructCallbackErrorResponse:error];
+            type = @"error";
+            cbresp = @{ @"code": NUMLONG(error.code), @"error": error.localizedDescription };
         }
-        [cb call:@[cbresp] thisObject:nil];
+        
+        [self _fireEventToListener:type withObject:cbresp listener:cb thisObject:nil];
     }];
 }
 
@@ -153,17 +162,20 @@
     ENSURE_ARG_AT_INDEX(cb, args, 1, KrollCallback);
     ENSURE_ARG_OR_NIL_AT_INDEX(params, args, 2, NSDictionary);
     
-    __block VideoProxy * proxy = [VideoProxy proxyWithCatalog:self];
     [self.catalogService findVideoWithReferenceID:refID parameters:params completion:^(BCOVVideo *video, NSDictionary *jsonResponse, NSError *error) {
         NSDictionary * cbresp;
+        NSString * type;
         if (video) {
-            proxy.video = video;
-            cbresp = [self _constructCallbackSuccessResponse:proxy];
+            VideoProxy * proxy = [VideoProxy proxyWithCatalog:self video:video];
+            type = @"success";
+            cbresp = @{ @"result": proxy };
         }
         else {
-            cbresp = [self _constructCallbackErrorResponse:error];
+            type = @"error";
+            cbresp = @{ @"code": NUMLONG(error.code), @"error": error.localizedDescription };
         }
-        [cb call:@[cbresp] thisObject:nil];
+        
+        [self _fireEventToListener:type withObject:cbresp listener:cb thisObject:nil];
     }];
 }
 

@@ -42,6 +42,7 @@ USE_VIEW_FOR_CONTENT_HEIGHT
 #pragma mark Public API
 
 - (void)setPlaylist:(id)value {
+    ENSURE_UI_THREAD_1_ARG(value)
     ENSURE_TYPE_OR_NIL(value, PlaylistProxy)
     if (value) {
         PlaylistProxy * proxy = (PlaylistProxy *)value;
@@ -51,6 +52,7 @@ USE_VIEW_FOR_CONTENT_HEIGHT
 }
 
 - (void)setVideo:(id)value {
+    ENSURE_UI_THREAD_1_ARG(value)
     ENSURE_TYPE_OR_NIL(value, VideoProxy)
     if (value) {
         VideoProxy * proxy = (VideoProxy *)value;
@@ -59,14 +61,17 @@ USE_VIEW_FOR_CONTENT_HEIGHT
 }
 
 - (void)advanceToNext:(id)args {
+    ENSURE_UI_THREAD_1_ARG(args)
     [self.playbackController advanceToNext];
 }
 
 - (void)pause:(id)args {
+    ENSURE_UI_THREAD_1_ARG(args)
     [self.playbackController pause];
 }
 
 - (void)play:(id)args {
+    ENSURE_UI_THREAD_1_ARG(args)
     [self.playbackController play];
 }
 

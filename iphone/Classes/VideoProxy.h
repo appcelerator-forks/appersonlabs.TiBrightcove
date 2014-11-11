@@ -7,8 +7,10 @@
 #import "TiProxy.h"
 #import "BCOVPlayerSDK.h"
 #import "ComAppersonlabsBrightcoveCatalogProxy.h"
+#import "PlaylistProxy.h"
 
 @interface VideoProxy : TiProxy
 @property (nonatomic, strong) BCOVVideo * video;
-+ (instancetype)proxyWithCatalog:(ComAppersonlabsBrightcoveCatalogProxy *)catalog;
++ (instancetype)proxyWithCatalog:(ComAppersonlabsBrightcoveCatalogProxy *)catalog video:(BCOVVideo *)video;
++ (instancetype)proxyWithPlaylist:(PlaylistProxy *)playlist video:(BCOVVideo *)video;
 @end

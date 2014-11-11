@@ -10,5 +10,5 @@
 
 @interface PlaylistProxy : TiProxy
 @property (nonatomic, strong) BCOVPlaylist * playlist;
-+ (instancetype)proxyWithCatalog:(ComAppersonlabsBrightcoveCatalogProxy *)catalog;
++ (instancetype)proxyWithCatalog:(ComAppersonlabsBrightcoveCatalogProxy *)catalog playlist:(BCOVPlaylist *)playlist;
 @end
