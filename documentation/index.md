@@ -53,24 +53,16 @@ there are no cue points, an empty array will be returned.
 
 **sources**
 
-(array of ??, read-only) List of source data locations where the video data can be
-fetched.  Normally, you won't need to access source data directly; the `Player`
-object will fetch the sources in the correct order for playback.
+(array of `VideoSource` objects, read-only) List of source data locations where the
+video data can be fetched.  Normally, you won't need to access source data directly;
+the `Player` object will fetch the sources in the correct order for playback.
 
 ### Catalog
 
 The `Catalog` object provides methods for fetching videos and playlists from your
 Brightcove Video Cloud account.  The Brightcove Media API makes asynchronous requests
 to get media data, so all of the methods in this object take a callback function
-which is run when the request is complete.  The callback function has a single
-parameter, an object containing the following properties:
-
-* **code** (number) the error code, if there was an error in the method call
-* **error** (string) a text description of the error, if there was an error in the
-method call.
-* **result** (object) the result of the method call. Usually this is a `Playlist`
-or `Video` object.
-* **success** (boolean) true if the method call succeeded.
+which is run when the request is complete.
 
 `Catalog` objects are created from the module object as follows:
 
@@ -84,7 +76,7 @@ Here's a simple example of how you can fetch a video using the catalog:
 
     // "player" is a Player object
     catalog.findVideoWithVideoID('34643423452345', function(e) {
-        if (e.success) {
+        if (e.type === 'success') {
             player.video = e.result;
         }
         else {
@@ -144,13 +136,76 @@ The function receives a single argument: an object which contains the following 
 
 ### Player
 
+The `Player` object is a view that displays Brightcove videos and playlists.  Typically,
+you will create a `Player` in your app and add it to a window or view, then use the
+`Catalog` object to find videos and playlists to play in the `Player`'s view.  A `Player`
+does not contain any playback controls.  You will need to create buttons or other controls
+to start playback, pause playback, and advance to the next video in a playlist as needed
+for your app.
+
+Here's a simple example of how you would create a player and some control buttons:
+
+    var tibrightcove = require('com.appersonlabs.tibrightcove');
+    var player = tibrightcove.createPlayerView({
+      top: 20,
+      left: 20,
+      width: 200,
+      height: 200,
+    });
+    window.add(player);
+
+    var playButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.PLAY,
+    });
+    playButton.addEventListener('click', function(e) {
+      player.play();
+    });
+
+    var advanceButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.FAST_FORWARD,
+    });
+    advanceButton.addEventListener('click', function(e) {
+      player.advanceToNext();
+    });
+
+    var toolbar = Ti.UI.iOS.createToolbar({
+      items: [playButton, advanceButton],
+      bottom: 0,
+      borderTop: true,
+      borderBottom: false,
+    });
+    
+    window.add(toolbar);
+
+#### Properties
+
+**playlist**
+
+(Playlist object) Provides a playlist to the Player object for playback.  Use the `play()`
+method to start playback and the `advanceToNext()` method to move forward in the playlist.
+
+**video**
+
+(Video object) Provides a single video to the Player object for playback.  Use the `play()`
+method to start playback.
+
+#### Methods
+
+**advanceToNext()**
+
+Advance to the next video in the playlist.
+
+**pause()**
+
+Pause the currently-playing video.
+
+**play()**
+
+Play the current video.
+
+
 ### Playlist
 
+### CuePoint
 
-
-## Callbacks
-
-code
-error
-result
-success
+### VideoSource
