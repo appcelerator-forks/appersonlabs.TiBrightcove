@@ -32,49 +32,6 @@
 }
 
 #pragma mark -
-#pragma mark Helper Methods
-
-- (NSDictionary *)_constructCallbackErrorResponse:(NSError *)error {
-    if (error) {
-        return @{
-                 @"code": NUMLONG(error.code),
-                 @"error": error.localizedDescription,
-                 @"result": [NSNull null],
-                 @"success": NUMBOOL(NO)
-                 };
-    }
-    else {
-        return @{
-                 @"code": NUMLONG(-1),
-                 @"error": @"unknown error fetching playlist",
-                 @"result": [NSNull null],
-                 @"success": NUMBOOL(NO)
-                 };
-    }
-    
-}
-
-- (NSDictionary *)_constructCallbackSuccessResponse:(TiProxy *)proxy {
-    if (proxy) {
-        return @{
-                 @"code": [NSNull null],
-                 @"error": [NSNull null],
-                 @"result": proxy,
-                 @"success": NUMBOOL(YES)
-                 };
-    }
-    else {
-        return @{
-                 @"code": NUMLONG(-1),
-                 @"error": @"unknown error",
-                 @"result": [NSNull null],
-                 @"success": NUMBOOL(NO)
-                 };
-    }
-    
-}
-
-#pragma mark -
 #pragma mark Public API
 
 - (void)findPlaylistWithPlaylistID:(id)args {
