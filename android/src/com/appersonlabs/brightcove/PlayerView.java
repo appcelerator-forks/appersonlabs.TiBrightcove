@@ -1,7 +1,5 @@
 package com.appersonlabs.brightcove;
 
-import org.appcelerator.kroll.common.Log;
-import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.proxy.TiViewProxy;
 import org.appcelerator.titanium.view.TiUIView;
 
@@ -29,7 +27,6 @@ public class PlayerView extends TiUIView {
     }
 
     protected void setVideo(VideoProxy proxy) {
-        Log.i(LCAT, "setVideo, UI thread? " + TiApplication.isUIThread());
         videoView.clear();
         videoView.add(proxy.getVideo());
     }

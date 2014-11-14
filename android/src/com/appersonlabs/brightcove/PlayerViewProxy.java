@@ -2,15 +2,14 @@ package com.appersonlabs.brightcove;
 
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.AsyncResult;
-import org.appcelerator.kroll.common.Log;
 import org.appcelerator.kroll.common.TiMessenger;
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.proxy.TiViewProxy;
 import org.appcelerator.titanium.view.TiUIView;
 
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
-import android.app.Activity;
 
 @Kroll.proxy(creatableInModule = BrightcoveModule.class)
 public class PlayerViewProxy extends TiViewProxy implements Handler.Callback {
@@ -35,23 +34,19 @@ public class PlayerViewProxy extends TiViewProxy implements Handler.Callback {
 
     @Override
     public TiUIView createView(Activity activity) {
-        Log.i(LCAT, "createView, UI thread? "+TiApplication.isUIThread());
         PlayerView view = new PlayerView(this);
         // TODO set any default params
         return view;
     }
 
     private void handleAdvanceToNext() {
-        Log.i(LCAT, "advance");
         getPlayerView().advanceToNext();
     }
 
     @Override
     public boolean handleMessage(Message msg) {
-        Log.i(LCAT, "handleMessage "+msg.what);
         switch (msg.what) {
         case MSG_SET_VIDEO: {
-            Log.i(LCAT, "set video case");
             AsyncResult result = (AsyncResult) msg.obj;
             handleSetVideo((VideoProxy) result.getArg());
             result.setResult(null);
@@ -81,12 +76,10 @@ public class PlayerViewProxy extends TiViewProxy implements Handler.Callback {
     }
 
     private void handlePause() {
-        Log.i(LCAT, "pause");
         getPlayerView().pause();
     }
 
     private void handlePlay() {
-        Log.i(LCAT, "play");
         getPlayerView().play();
     }
 
@@ -99,7 +92,6 @@ public class PlayerViewProxy extends TiViewProxy implements Handler.Callback {
     }
     
     private void handleSetVideo(VideoProxy proxy) {
-        Log.i(LCAT, "handleSetVideo, UI thread? "+TiApplication.isUIThread());
         getPlayerView().setVideo(proxy);
     }
 
@@ -135,7 +127,6 @@ public class PlayerViewProxy extends TiViewProxy implements Handler.Callback {
 
     @Kroll.setProperty(retain = false)
     public void setVideo(final VideoProxy proxy) {
-        Log.i(LCAT, "setVideo, UI thread? "+TiApplication.isUIThread());
         if (TiApplication.isUIThread()) {
             handleSetVideo(proxy);
         }
