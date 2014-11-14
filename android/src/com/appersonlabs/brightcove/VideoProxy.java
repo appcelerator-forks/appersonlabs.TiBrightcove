@@ -54,6 +54,10 @@ public class VideoProxy extends KrollProxy {
         return result.toArray(new VideoSourceProxy[0]);
     }
 
+    protected Video getVideo() {
+        return video;
+    }
+
     @Kroll.getProperty(name = "properties")
     public KrollDict getVideoProperties() {
         return BrightcoveModule.toKrollDict(video.getProperties());

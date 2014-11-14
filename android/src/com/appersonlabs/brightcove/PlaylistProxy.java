@@ -19,18 +19,22 @@ public class PlaylistProxy extends KrollProxy {
     public PlaylistProxy(Playlist playlist) {
         this.playlist = playlist;
     }
-    
+
     @Override
     public String getApiName() {
         return BrightcoveModule.MODULE_ID + ".Playlist";
     }
 
-    @getProperty(name="properties")
+    protected Playlist getPlaylist() {
+        return playlist;
+    }
+
+    @getProperty(name = "properties")
     public KrollDict getVideoProperties() {
         return BrightcoveModule.toKrollDict(playlist.getProperties());
     }
-    
-    @getProperty(name="videos")
+
+    @getProperty(name = "videos")
     public VideoProxy[] getVideos() {
         List<VideoProxy> proxies = new ArrayList<VideoProxy>();
         for (Video video : playlist.getVideos()) {
