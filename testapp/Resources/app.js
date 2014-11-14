@@ -13,32 +13,34 @@ var player = brightcove.createPlayerView({
 });
 
 var playButton = Ti.UI.createButton({
-  systemButton: Ti.UI.iPhone.SystemButton.PLAY,
+  title: "Play",
 });
 playButton.addEventListener('click', function(e) {
   player.play();
 });
 
 var pauseButton = Ti.UI.createButton({
-  systemButton: Ti.UI.iPhone.SystemButton.PAUSE,
+  title: "Pause",
 });
 pauseButton.addEventListener('click', function(e) {
   player.pause();
 });
 
 var advanceButton = Ti.UI.createButton({
-  systemButton: Ti.UI.iPhone.SystemButton.FAST_FORWARD,
+  title: "Advance",
 });
 advanceButton.addEventListener('click', function(e) {
   player.advanceToNext();
 });
 
-var toolbar = Ti.UI.iOS.createToolbar({
-  items: [playButton, pauseButton, advanceButton],
+var toolbar = Ti.UI.createView({
+  layout: "horizontal",
   bottom: 0,
-  borderTop: true,
-  borderBottom: false,
+  height: Ti.UI.SIZE,
 });
+toolbar.add(playButton);
+toolbar.add(pauseButton);
+toolbar.add(advanceButton);
 
 var videoButton = Ti.UI.createButton({
   bottom: 48,
@@ -66,10 +68,8 @@ win.add(videoButton);
 
 win.addEventListener('open', function(e) {
   catalog.findPlaylistWithPlaylistID('3868842075001', function(e) {
-    Ti.API.info(JSON.stringify(e));
     if (e.type === 'success') {
       player.playlist = e.result;
-      
       // log properties
       var playlist = e.result;
       Ti.API.info("playlist properties"+JSON.stringify(playlist.properties));
@@ -83,7 +83,7 @@ win.addEventListener('open', function(e) {
     else {
       Ti.API.error(e.error);
     }
-  })
+  });
 });
 
 win.open();
