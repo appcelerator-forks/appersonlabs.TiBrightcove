@@ -1,5 +1,10 @@
 var brightcove = require('com.appersonlabs.brightcove');
 
+var videos = {
+  "sample1": "3868942966001",
+  "sample2": "3868587647001",
+  "agility": "3873079666001"
+};
 
 var catalog = brightcove.createCatalog({
   token: 'RNj-yS616_T1GQ4znMqS3ut3ijXuGrG69w3oYJBMVahURwi7P4ZH4Q..',
@@ -33,40 +38,29 @@ advanceButton.addEventListener('click', function(e) {
   player.advanceToNext();
 });
 
-var toolbar = Ti.UI.createView({
-  layout: "horizontal",
-  bottom: 0,
-  height: Ti.UI.SIZE,
-});
-toolbar.add(playButton);
-toolbar.add(pauseButton);
-toolbar.add(advanceButton);
 
-var videoButton = Ti.UI.createButton({
-  bottom: 48,
-  title: 'Load Video',
-});
-videoButton.addEventListener('click', function() {
-  catalog.findVideoWithVideoID('3873079666001', function(e) {
-    if (e.type === 'success') {
-      player.video = e.result;
-      dump_video_to_log(e.result);
-    }
-    else {
-      Ti.API.error(e.error);
-    }
-  })
-});
+function makeVideoButton(id, number) {
+  var result = Ti.UI.createButton({
+    title: 'Video '+number,
+  });
+  result.addEventListener('click', function() {
+    catalog.findVideoWithVideoID(id, function(e) {
+      if (e.type === 'success') {
+        player.video = e.result;
+        dump_video_to_log(e.result);
+      }
+      else {
+        Ti.API.error(e.error);
+      }
+    });
+  });
+  return result;
+}
 
-var win = Ti.UI.createWindow({
-	backgroundColor:'white'
+var playlistButton = Ti.UI.createButton({
+  title: 'Playlist',
 });
-
-win.add(player);
-win.add(toolbar);
-win.add(videoButton);
-
-win.addEventListener('open', function(e) {
+playlistButton.addEventListener('click', function() {
   catalog.findPlaylistWithPlaylistID('3868842075001', function(e) {
     if (e.type === 'success') {
       player.playlist = e.result;
@@ -85,6 +79,28 @@ win.addEventListener('open', function(e) {
     }
   });
 });
+
+var toolbar = Ti.UI.createView({
+  layout: "horizontal",
+  bottom: 0,
+  height: Ti.UI.SIZE,
+});
+
+toolbar.add(playButton);
+toolbar.add(pauseButton);
+toolbar.add(advanceButton);
+toolbar.add(makeVideoButton(videos.sample1, '1'));
+toolbar.add(makeVideoButton(videos.sample2, '2'));
+toolbar.add(makeVideoButton(videos.agility, '3'));
+toolbar.add(playlistButton);
+
+
+var win = Ti.UI.createWindow({
+	backgroundColor:'white'
+});
+
+win.add(player);
+win.add(toolbar);
 
 win.open();
 
