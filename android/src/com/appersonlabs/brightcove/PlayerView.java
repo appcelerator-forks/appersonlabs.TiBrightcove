@@ -1,5 +1,7 @@
 package com.appersonlabs.brightcove;
 
+import java.util.List;
+
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.proxy.TiViewProxy;
@@ -15,21 +17,22 @@ import com.brightcove.player.event.EventEmitter;
 import com.brightcove.player.event.EventEmitterImpl;
 import com.brightcove.player.event.EventListener;
 import com.brightcove.player.event.EventType;
+import com.brightcove.player.model.Video;
 import com.brightcove.player.view.BrightcoveVideoView;
 
 public class PlayerView extends TiUIView implements Handler.Callback {
 
-    private static final int    ADVANCE_TO_NEXT = 50001;
-
     private static final String LCAT            = "PlayerView";
 
-    private static final int    PAUSE           = 50002;
+    private static final int    MSG_ADVANCE_TO_NEXT = 50001;
 
-    private static final int    PLAY            = 50003;
+    private static final int    MSG_PAUSE           = 50002;
 
-    private static final int    SET_PLAYLIST    = 50004;
+    private static final int    MSG_PLAY            = 50003;
 
-    private static final int    SET_VIDEO       = 50005;
+    private static final int    MSG_SET_PLAYLIST    = 50004;
+
+    private static final int    MSG_SET_VIDEO       = 50005;
 
     private Activity            activity;
 
@@ -56,10 +59,19 @@ public class PlayerView extends TiUIView implements Handler.Callback {
 
     protected void advanceToNext() {
         if (!TiApplication.isUIThread()) {
-            Message message = mainHandler.obtainMessage(ADVANCE_TO_NEXT);
+            Message message = mainHandler.obtainMessage(MSG_ADVANCE_TO_NEXT);
             message.sendToTarget();
-        } else {
+        }
+        else {
             handleAdvanceToNext();
+        }
+    }
+
+    private void clearVideosAfter(int index) {
+        List<Video> list = videoView.getList();
+        int size = list != null ? list.size() : 0;
+        for (int i = size - 1; i > index; i--) {
+            videoView.remove(i);
         }
     }
 
@@ -68,57 +80,68 @@ public class PlayerView extends TiUIView implements Handler.Callback {
         emitter.on(EventType.DID_PAUSE, new EventListener() {
             @Override
             public void processEvent(Event e) {
-                Log.i(LCAT, "did pause");
+                fireEvent("pause", null);
             }
         });
         emitter.on(EventType.DID_PLAY, new EventListener() {
             @Override
             public void processEvent(Event e) {
-                Log.i(LCAT, "did play");
+                fireEvent("play", null);
             }
         });
         emitter.on(EventType.READY_TO_PLAY, new EventListener() {
             @Override
             public void processEvent(Event e) {
-                Log.i(LCAT, "ready to play");
+                fireEvent("ready", null);
             }
         });
         emitter.on(EventType.COMPLETED, new EventListener() {
             @Override
             public void processEvent(Event e) {
-                Log.i(LCAT, "completed");
+                fireEvent("end", null);
             }
         });
-        // TODO terminate and fail?
+        // TODO terminate and fail events?
 
         return emitter;
     }
 
     private void handleAdvanceToNext() {
-        // TODO
+        boolean playing = videoView.isPlaying();
+        List<Video> list = videoView.getList();
+        int size = list != null ? list.size() : 0;
+        if (size > 0) {
+            int current = videoView.getCurrentIndex();
+            if (current < size - 1) {
+                videoView.setCurrentIndex(current + 1);
+                if (playing) {
+                    videoView.start();
+                }
+            }
+        }
     }
 
     @Override
     public boolean handleMessage(Message msg) {
         boolean handled = false;
         switch (msg.what) {
-        case PLAY:
+        case MSG_PLAY:
             handlePlay();
             handled = true;
             break;
-        case PAUSE:
+        case MSG_PAUSE:
             handlePause();
             handled = true;
             break;
-        case ADVANCE_TO_NEXT:
+        case MSG_ADVANCE_TO_NEXT:
             handleAdvanceToNext();
             handled = true;
             break;
-        case SET_VIDEO:
+        case MSG_SET_VIDEO:
             handleSetVideo((VideoProxy) msg.obj);
             handled = true;
             break;
-        case SET_PLAYLIST:
+        case MSG_SET_PLAYLIST:
             handleSetPlaylist((PlaylistProxy) msg.obj);
             handled = true;
             break;
@@ -135,49 +158,55 @@ public class PlayerView extends TiUIView implements Handler.Callback {
     }
 
     private void handleSetPlaylist(PlaylistProxy proxy) {
+        List<Video> videos = proxy.getPlaylist().getVideos();
+
         videoView.stopPlayback();
-        videoView.clear();
-        videoView.addAll(proxy.getPlaylist().getVideos());
+        videoView.addAll(0, videos);
+        clearVideosAfter(videos.size());
     }
 
     private void handleSetVideo(VideoProxy proxy) {
         videoView.stopPlayback();
-        videoView.clear();
-        videoView.add(proxy.getVideo());
+        videoView.add(0, proxy.getVideo());
+        clearVideosAfter(0);
     }
 
     protected void pause() {
         if (!TiApplication.isUIThread()) {
-            Message message = mainHandler.obtainMessage(PAUSE);
+            Message message = mainHandler.obtainMessage(MSG_PAUSE);
             message.sendToTarget();
-        } else {
+        }
+        else {
             handlePause();
         }
     }
 
     protected void play() {
         if (!TiApplication.isUIThread()) {
-            Message message = mainHandler.obtainMessage(PLAY);
+            Message message = mainHandler.obtainMessage(MSG_PLAY);
             message.sendToTarget();
-        } else {
+        }
+        else {
             handlePlay();
         }
     }
 
     protected void setPlaylist(PlaylistProxy proxy) {
         if (!TiApplication.isUIThread()) {
-            Message message = mainHandler.obtainMessage(SET_PLAYLIST, proxy);
+            Message message = mainHandler.obtainMessage(MSG_SET_PLAYLIST, proxy);
             message.sendToTarget();
-        } else {
+        }
+        else {
             handleSetPlaylist(proxy);
         }
     }
 
     protected void setVideo(VideoProxy proxy) {
         if (!TiApplication.isUIThread()) {
-            Message message = mainHandler.obtainMessage(SET_VIDEO, proxy);
+            Message message = mainHandler.obtainMessage(MSG_SET_VIDEO, proxy);
             message.sendToTarget();
-        } else {
+        }
+        else {
             handleSetVideo(proxy);
         }
     }

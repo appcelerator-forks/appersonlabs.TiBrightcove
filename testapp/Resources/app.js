@@ -16,6 +16,18 @@ var player = brightcove.createPlayerView({
   width: 200,
   height: 200,
 });
+player.addEventListener('play', function(e) {
+  Ti.API.info("play event received");
+});
+player.addEventListener('pause', function(e) {
+  Ti.API.info("pause event received");
+});
+player.addEventListener('ready', function(e) {
+  Ti.API.info("ready event received");
+});
+player.addEventListener('end', function(e) {
+  Ti.API.info("end event received");
+});
 
 var playButton = Ti.UI.createButton({
   title: "Play",
