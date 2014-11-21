@@ -162,7 +162,7 @@ public class PlayerView extends TiUIView implements Handler.Callback {
 
         videoView.stopPlayback();
         videoView.addAll(0, videos);
-        clearVideosAfter(videos.size());
+        clearVideosAfter(videos.size() - 1);
     }
 
     private void handleSetVideo(VideoProxy proxy) {
