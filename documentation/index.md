@@ -2,11 +2,11 @@
 
 ## Quick Start
 
-[![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/com.appersonlabs.tibrightcove)
+[![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/com.appersonlabs.brightcove)
 
 Download the latest distribution ZIP-file or install using the [gitTio CLI](http://gitt.io/cli):
 
-`$ gittio install com.appersonlabs.tibrightcove`
+`$ gittio install com.appersonlabs.brightcove`
 
 ## API
 
@@ -22,7 +22,7 @@ This document follows these conventions:
 
 Load the TiBrightcove module using the built-in `require()` function:
 
-    var tibrightcove = require('com.appersonlabs.tibrightcove');
+    var tibrightcove = require('com.appersonlabs.brightcove');
 
 You may load the module in each JavaScript file where it is used, or load it once in your
 `app.js` or `alloy.js` file and assign it to a global variable.
@@ -66,7 +66,7 @@ which is run when the request is complete.
 
 `Catalog` objects are created from the module object as follows:
 
-    var tibrightcove = require('com.appersonlabs.tibrightcove');
+    var tibrightcove = require('com.appersonlabs.brightcove');
     var catalog = tibrightcove.createCatalog({ token: 'my-brightcove-api-token' });
 
 The `token` property in the creation dictionary is required.  You can get your
@@ -145,7 +145,7 @@ for your app.
 
 Here's a simple example of how you would create a player and some control buttons:
 
-    var tibrightcove = require('com.appersonlabs.tibrightcove');
+    var tibrightcove = require('com.appersonlabs.brightcove');
     var player = tibrightcove.createPlayerView({
       top: 20,
       left: 20,
