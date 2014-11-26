@@ -2,12 +2,12 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.0
+version: 0.9.0
 apiversion: 2
-description: brightcove
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2014 by Your Company
+description: Brightcode Video Player
+author: Apperson Labs
+license: MIT License
+copyright: Copyright (c) 2014 by Apperson Labs
 
 # these should not be edited
 name: brightcove
