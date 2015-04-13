@@ -26,6 +26,24 @@
 		24DD6CFA1134B3F500162E58 /* ComAppersonlabsBrightcoveModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* ComAppersonlabsBrightcoveModule.m */; };
 		24DE9E1111C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m */; };
+		7412B2831A8597CC003C6D52 /* libBCOVPlayerSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7412B2821A8597CC003C6D52 /* libBCOVPlayerSDK.a */; };
+		7412B2961A8597DA003C6D52 /* BCOVBasicSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2851A8597DA003C6D52 /* BCOVBasicSessionProvider.h */; };
+		7412B2971A8597DA003C6D52 /* BCOVCatalogConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2861A8597DA003C6D52 /* BCOVCatalogConstants.h */; };
+		7412B2981A8597DA003C6D52 /* BCOVCatalogService.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2871A8597DA003C6D52 /* BCOVCatalogService.h */; };
+		7412B2991A8597DA003C6D52 /* BCOVCuePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2881A8597DA003C6D52 /* BCOVCuePoint.h */; };
+		7412B29A1A8597DA003C6D52 /* BCOVCuePointCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2891A8597DA003C6D52 /* BCOVCuePointCollection.h */; };
+		7412B29B1A8597DA003C6D52 /* BCOVCuePointProgressPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B28A1A8597DA003C6D52 /* BCOVCuePointProgressPolicy.h */; };
+		7412B29C1A8597DA003C6D52 /* BCOVDelegatingSessionConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B28B1A8597DA003C6D52 /* BCOVDelegatingSessionConsumer.h */; };
+		7412B29D1A8597DA003C6D52 /* BCOVMediaRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B28C1A8597DA003C6D52 /* BCOVMediaRequestFactory.h */; };
+		7412B29E1A8597DA003C6D52 /* BCOVPlaybackController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B28D1A8597DA003C6D52 /* BCOVPlaybackController.h */; };
+		7412B29F1A8597DA003C6D52 /* BCOVPlaybackSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B28E1A8597DA003C6D52 /* BCOVPlaybackSession.h */; };
+		7412B2A01A8597DA003C6D52 /* BCOVPlaybackSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B28F1A8597DA003C6D52 /* BCOVPlaybackSessionProvider.h */; };
+		7412B2A11A8597DA003C6D52 /* BCOVPlayerSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2901A8597DA003C6D52 /* BCOVPlayerSDK.h */; };
+		7412B2A21A8597DA003C6D52 /* BCOVPlayerSDKManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2911A8597DA003C6D52 /* BCOVPlayerSDKManager.h */; };
+		7412B2A31A8597DA003C6D52 /* BCOVPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2921A8597DA003C6D52 /* BCOVPlaylist.h */; };
+		7412B2A41A8597DA003C6D52 /* BCOVSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2931A8597DA003C6D52 /* BCOVSource.h */; };
+		7412B2A51A8597DA003C6D52 /* BCOVVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2941A8597DA003C6D52 /* BCOVVideo.h */; };
+		7412B2A61A8597DA003C6D52 /* NSDictionary+BCOVURLSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7412B2951A8597DA003C6D52 /* NSDictionary+BCOVURLSupport.h */; };
 		AA747D9F0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		DAD831AA1A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD831A81A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.h */; };
@@ -38,27 +56,9 @@
 		DAD9940D1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */; };
 		DAD994101A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */; };
 		DAD994111A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD9940F1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m */; };
-		DAE535521A02DCEA0016088C /* BCOVBasicSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535411A02DCEA0016088C /* BCOVBasicSessionProvider.h */; };
-		DAE535531A02DCEA0016088C /* BCOVCatalogConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535421A02DCEA0016088C /* BCOVCatalogConstants.h */; };
-		DAE535541A02DCEA0016088C /* BCOVCatalogService.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535431A02DCEA0016088C /* BCOVCatalogService.h */; };
-		DAE535551A02DCEA0016088C /* BCOVCuePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535441A02DCEA0016088C /* BCOVCuePoint.h */; };
-		DAE535561A02DCEA0016088C /* BCOVCuePointCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535451A02DCEA0016088C /* BCOVCuePointCollection.h */; };
-		DAE535571A02DCEA0016088C /* BCOVCuePointProgressPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535461A02DCEA0016088C /* BCOVCuePointProgressPolicy.h */; };
-		DAE535581A02DCEA0016088C /* BCOVDelegatingSessionConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535471A02DCEA0016088C /* BCOVDelegatingSessionConsumer.h */; };
-		DAE535591A02DCEA0016088C /* BCOVMediaRequestFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535481A02DCEA0016088C /* BCOVMediaRequestFactory.h */; };
-		DAE5355A1A02DCEA0016088C /* BCOVPlaybackController.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535491A02DCEA0016088C /* BCOVPlaybackController.h */; };
-		DAE5355B1A02DCEA0016088C /* BCOVPlaybackSession.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE5354A1A02DCEA0016088C /* BCOVPlaybackSession.h */; };
-		DAE5355C1A02DCEA0016088C /* BCOVPlaybackSessionProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE5354B1A02DCEA0016088C /* BCOVPlaybackSessionProvider.h */; };
-		DAE5355D1A02DCEA0016088C /* BCOVPlayerSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE5354C1A02DCEA0016088C /* BCOVPlayerSDK.h */; };
-		DAE5355E1A02DCEA0016088C /* BCOVPlayerSDKManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE5354D1A02DCEA0016088C /* BCOVPlayerSDKManager.h */; };
-		DAE5355F1A02DCEA0016088C /* BCOVPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE5354E1A02DCEA0016088C /* BCOVPlaylist.h */; };
-		DAE535601A02DCEA0016088C /* BCOVSource.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE5354F1A02DCEA0016088C /* BCOVSource.h */; };
-		DAE535611A02DCEA0016088C /* BCOVVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535501A02DCEA0016088C /* BCOVVideo.h */; };
-		DAE535621A02DCEA0016088C /* NSDictionary+BCOVURLSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE535511A02DCEA0016088C /* NSDictionary+BCOVURLSupport.h */; };
 		DAE535641A02DD0A0016088C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE535631A02DD0A0016088C /* AVFoundation.framework */; };
 		DAE535661A02DD100016088C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE535651A02DD100016088C /* CoreMedia.framework */; };
 		DAE535681A02DD180016088C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE535671A02DD180016088C /* MediaPlayer.framework */; };
-		DAE5356A1A02DD250016088C /* libBCOVPlayerSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE535691A02DD250016088C /* libBCOVPlayerSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +77,24 @@
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		24DE9E0F11C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComAppersonlabsBrightcoveModuleAssets.h; path = Classes/ComAppersonlabsBrightcoveModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcoveModuleAssets.m; path = Classes/ComAppersonlabsBrightcoveModuleAssets.m; sourceTree = "<group>"; };
+		7412B2821A8597CC003C6D52 /* libBCOVPlayerSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBCOVPlayerSDK.a; path = platform/libBCOVPlayerSDK.a; sourceTree = "<group>"; };
+		7412B2851A8597DA003C6D52 /* BCOVBasicSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVBasicSessionProvider.h; sourceTree = "<group>"; };
+		7412B2861A8597DA003C6D52 /* BCOVCatalogConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVCatalogConstants.h; sourceTree = "<group>"; };
+		7412B2871A8597DA003C6D52 /* BCOVCatalogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVCatalogService.h; sourceTree = "<group>"; };
+		7412B2881A8597DA003C6D52 /* BCOVCuePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVCuePoint.h; sourceTree = "<group>"; };
+		7412B2891A8597DA003C6D52 /* BCOVCuePointCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVCuePointCollection.h; sourceTree = "<group>"; };
+		7412B28A1A8597DA003C6D52 /* BCOVCuePointProgressPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVCuePointProgressPolicy.h; sourceTree = "<group>"; };
+		7412B28B1A8597DA003C6D52 /* BCOVDelegatingSessionConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVDelegatingSessionConsumer.h; sourceTree = "<group>"; };
+		7412B28C1A8597DA003C6D52 /* BCOVMediaRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVMediaRequestFactory.h; sourceTree = "<group>"; };
+		7412B28D1A8597DA003C6D52 /* BCOVPlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVPlaybackController.h; sourceTree = "<group>"; };
+		7412B28E1A8597DA003C6D52 /* BCOVPlaybackSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVPlaybackSession.h; sourceTree = "<group>"; };
+		7412B28F1A8597DA003C6D52 /* BCOVPlaybackSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVPlaybackSessionProvider.h; sourceTree = "<group>"; };
+		7412B2901A8597DA003C6D52 /* BCOVPlayerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVPlayerSDK.h; sourceTree = "<group>"; };
+		7412B2911A8597DA003C6D52 /* BCOVPlayerSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVPlayerSDKManager.h; sourceTree = "<group>"; };
+		7412B2921A8597DA003C6D52 /* BCOVPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVPlaylist.h; sourceTree = "<group>"; };
+		7412B2931A8597DA003C6D52 /* BCOVSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVSource.h; sourceTree = "<group>"; };
+		7412B2941A8597DA003C6D52 /* BCOVVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOVVideo.h; sourceTree = "<group>"; };
+		7412B2951A8597DA003C6D52 /* NSDictionary+BCOVURLSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BCOVURLSupport.h"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComAppersonlabsBrightcove_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComAppersonlabsBrightcove.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComAppersonlabsBrightcove.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,27 +108,9 @@
 		DAD9940B1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcovePlayerViewProxy.m; path = Classes/ComAppersonlabsBrightcovePlayerViewProxy.m; sourceTree = "<group>"; };
 		DAD9940E1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComAppersonlabsBrightcovePlayerView.h; path = Classes/ComAppersonlabsBrightcovePlayerView.h; sourceTree = "<group>"; };
 		DAD9940F1A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComAppersonlabsBrightcovePlayerView.m; path = Classes/ComAppersonlabsBrightcovePlayerView.m; sourceTree = "<group>"; };
-		DAE535411A02DCEA0016088C /* BCOVBasicSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVBasicSessionProvider.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVBasicSessionProvider.h"; sourceTree = "<group>"; };
-		DAE535421A02DCEA0016088C /* BCOVCatalogConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCatalogConstants.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCatalogConstants.h"; sourceTree = "<group>"; };
-		DAE535431A02DCEA0016088C /* BCOVCatalogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCatalogService.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCatalogService.h"; sourceTree = "<group>"; };
-		DAE535441A02DCEA0016088C /* BCOVCuePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCuePoint.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCuePoint.h"; sourceTree = "<group>"; };
-		DAE535451A02DCEA0016088C /* BCOVCuePointCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCuePointCollection.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCuePointCollection.h"; sourceTree = "<group>"; };
-		DAE535461A02DCEA0016088C /* BCOVCuePointProgressPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVCuePointProgressPolicy.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVCuePointProgressPolicy.h"; sourceTree = "<group>"; };
-		DAE535471A02DCEA0016088C /* BCOVDelegatingSessionConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVDelegatingSessionConsumer.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVDelegatingSessionConsumer.h"; sourceTree = "<group>"; };
-		DAE535481A02DCEA0016088C /* BCOVMediaRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVMediaRequestFactory.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVMediaRequestFactory.h"; sourceTree = "<group>"; };
-		DAE535491A02DCEA0016088C /* BCOVPlaybackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVPlaybackController.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVPlaybackController.h"; sourceTree = "<group>"; };
-		DAE5354A1A02DCEA0016088C /* BCOVPlaybackSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVPlaybackSession.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVPlaybackSession.h"; sourceTree = "<group>"; };
-		DAE5354B1A02DCEA0016088C /* BCOVPlaybackSessionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVPlaybackSessionProvider.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVPlaybackSessionProvider.h"; sourceTree = "<group>"; };
-		DAE5354C1A02DCEA0016088C /* BCOVPlayerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVPlayerSDK.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVPlayerSDK.h"; sourceTree = "<group>"; };
-		DAE5354D1A02DCEA0016088C /* BCOVPlayerSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVPlayerSDKManager.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVPlayerSDKManager.h"; sourceTree = "<group>"; };
-		DAE5354E1A02DCEA0016088C /* BCOVPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVPlaylist.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVPlaylist.h"; sourceTree = "<group>"; };
-		DAE5354F1A02DCEA0016088C /* BCOVSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVSource.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVSource.h"; sourceTree = "<group>"; };
-		DAE535501A02DCEA0016088C /* BCOVVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCOVVideo.h; path = "vendor/brightcove-player-sdk-ios/Headers/BCOVVideo.h"; sourceTree = "<group>"; };
-		DAE535511A02DCEA0016088C /* NSDictionary+BCOVURLSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+BCOVURLSupport.h"; path = "vendor/brightcove-player-sdk-ios/Headers/NSDictionary+BCOVURLSupport.h"; sourceTree = "<group>"; };
 		DAE535631A02DD0A0016088C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DAE535651A02DD100016088C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DAE535671A02DD180016088C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		DAE535691A02DD250016088C /* libBCOVPlayerSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBCOVPlayerSDK.a; path = "vendor/brightcove-player-sdk-ios/Library/libBCOVPlayerSDK.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE5356A1A02DD250016088C /* libBCOVPlayerSDK.a in Frameworks */,
 				DAE535681A02DD180016088C /* MediaPlayer.framework in Frameworks */,
+				7412B2831A8597CC003C6D52 /* libBCOVPlayerSDK.a in Frameworks */,
 				DAE535661A02DD100016088C /* CoreMedia.framework in Frameworks */,
 				DAE535641A02DD0A0016088C /* AVFoundation.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
@@ -140,8 +140,8 @@
 		0867D691FE84028FC02AAC07 /* brightcove */ = {
 			isa = PBXGroup;
 			children = (
+				7412B2841A8597DA003C6D52 /* headers */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
-				DAE535401A02DCC80016088C /* brightcove-player-sdk-ios */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -152,7 +152,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DAE535691A02DD250016088C /* libBCOVPlayerSDK.a */,
+				7412B2821A8597CC003C6D52 /* libBCOVPlayerSDK.a */,
 				DAE535671A02DD180016088C /* MediaPlayer.framework */,
 				DAE535651A02DD100016088C /* CoreMedia.framework */,
 				DAE535631A02DD0A0016088C /* AVFoundation.framework */,
@@ -191,28 +191,28 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		DAE535401A02DCC80016088C /* brightcove-player-sdk-ios */ = {
+		7412B2841A8597DA003C6D52 /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				DAE535411A02DCEA0016088C /* BCOVBasicSessionProvider.h */,
-				DAE535421A02DCEA0016088C /* BCOVCatalogConstants.h */,
-				DAE535431A02DCEA0016088C /* BCOVCatalogService.h */,
-				DAE535441A02DCEA0016088C /* BCOVCuePoint.h */,
-				DAE535451A02DCEA0016088C /* BCOVCuePointCollection.h */,
-				DAE535461A02DCEA0016088C /* BCOVCuePointProgressPolicy.h */,
-				DAE535471A02DCEA0016088C /* BCOVDelegatingSessionConsumer.h */,
-				DAE535481A02DCEA0016088C /* BCOVMediaRequestFactory.h */,
-				DAE535491A02DCEA0016088C /* BCOVPlaybackController.h */,
-				DAE5354A1A02DCEA0016088C /* BCOVPlaybackSession.h */,
-				DAE5354B1A02DCEA0016088C /* BCOVPlaybackSessionProvider.h */,
-				DAE5354C1A02DCEA0016088C /* BCOVPlayerSDK.h */,
-				DAE5354D1A02DCEA0016088C /* BCOVPlayerSDKManager.h */,
-				DAE5354E1A02DCEA0016088C /* BCOVPlaylist.h */,
-				DAE5354F1A02DCEA0016088C /* BCOVSource.h */,
-				DAE535501A02DCEA0016088C /* BCOVVideo.h */,
-				DAE535511A02DCEA0016088C /* NSDictionary+BCOVURLSupport.h */,
+				7412B2851A8597DA003C6D52 /* BCOVBasicSessionProvider.h */,
+				7412B2861A8597DA003C6D52 /* BCOVCatalogConstants.h */,
+				7412B2871A8597DA003C6D52 /* BCOVCatalogService.h */,
+				7412B2881A8597DA003C6D52 /* BCOVCuePoint.h */,
+				7412B2891A8597DA003C6D52 /* BCOVCuePointCollection.h */,
+				7412B28A1A8597DA003C6D52 /* BCOVCuePointProgressPolicy.h */,
+				7412B28B1A8597DA003C6D52 /* BCOVDelegatingSessionConsumer.h */,
+				7412B28C1A8597DA003C6D52 /* BCOVMediaRequestFactory.h */,
+				7412B28D1A8597DA003C6D52 /* BCOVPlaybackController.h */,
+				7412B28E1A8597DA003C6D52 /* BCOVPlaybackSession.h */,
+				7412B28F1A8597DA003C6D52 /* BCOVPlaybackSessionProvider.h */,
+				7412B2901A8597DA003C6D52 /* BCOVPlayerSDK.h */,
+				7412B2911A8597DA003C6D52 /* BCOVPlayerSDKManager.h */,
+				7412B2921A8597DA003C6D52 /* BCOVPlaylist.h */,
+				7412B2931A8597DA003C6D52 /* BCOVSource.h */,
+				7412B2941A8597DA003C6D52 /* BCOVVideo.h */,
+				7412B2951A8597DA003C6D52 /* NSDictionary+BCOVURLSupport.h */,
 			);
-			name = "brightcove-player-sdk-ios";
+			path = headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,31 +222,31 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAE5355E1A02DCEA0016088C /* BCOVPlayerSDKManager.h in Headers */,
 				DAD831AE1A07F04E0073CBE5 /* PlaylistProxy.h in Headers */,
+				7412B29A1A8597DA003C6D52 /* BCOVCuePointCollection.h in Headers */,
+				7412B2A51A8597DA003C6D52 /* BCOVVideo.h in Headers */,
+				7412B2A31A8597DA003C6D52 /* BCOVPlaylist.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* ComAppersonlabsBrightcove_Prefix.pch in Headers */,
-				DAE535531A02DCEA0016088C /* BCOVCatalogConstants.h in Headers */,
-				DAE535601A02DCEA0016088C /* BCOVSource.h in Headers */,
-				DAE535541A02DCEA0016088C /* BCOVCatalogService.h in Headers */,
+				7412B2A21A8597DA003C6D52 /* BCOVPlayerSDKManager.h in Headers */,
+				7412B29C1A8597DA003C6D52 /* BCOVDelegatingSessionConsumer.h in Headers */,
+				7412B2961A8597DA003C6D52 /* BCOVBasicSessionProvider.h in Headers */,
 				DAD831AA1A07EE600073CBE5 /* ComAppersonlabsBrightcoveCatalogProxy.h in Headers */,
+				7412B29F1A8597DA003C6D52 /* BCOVPlaybackSession.h in Headers */,
+				7412B2A41A8597DA003C6D52 /* BCOVSource.h in Headers */,
+				7412B2A61A8597DA003C6D52 /* NSDictionary+BCOVURLSupport.h in Headers */,
 				DAD9940C1A03EFCC006B2DB1 /* ComAppersonlabsBrightcovePlayerViewProxy.h in Headers */,
-				DAE5355B1A02DCEA0016088C /* BCOVPlaybackSession.h in Headers */,
 				DAD831B41A0809E30073CBE5 /* VideoProxy.h in Headers */,
-				DAE5355A1A02DCEA0016088C /* BCOVPlaybackController.h in Headers */,
-				DAE535591A02DCEA0016088C /* BCOVMediaRequestFactory.h in Headers */,
-				DAE535581A02DCEA0016088C /* BCOVDelegatingSessionConsumer.h in Headers */,
-				DAE535561A02DCEA0016088C /* BCOVCuePointCollection.h in Headers */,
+				7412B2971A8597DA003C6D52 /* BCOVCatalogConstants.h in Headers */,
+				7412B2981A8597DA003C6D52 /* BCOVCatalogService.h in Headers */,
+				7412B29D1A8597DA003C6D52 /* BCOVMediaRequestFactory.h in Headers */,
+				7412B2A01A8597DA003C6D52 /* BCOVPlaybackSessionProvider.h in Headers */,
 				24DD6CF91134B3F500162E58 /* ComAppersonlabsBrightcoveModule.h in Headers */,
-				DAE535621A02DCEA0016088C /* NSDictionary+BCOVURLSupport.h in Headers */,
-				DAE5355D1A02DCEA0016088C /* BCOVPlayerSDK.h in Headers */,
-				DAE5355F1A02DCEA0016088C /* BCOVPlaylist.h in Headers */,
-				DAE535611A02DCEA0016088C /* BCOVVideo.h in Headers */,
-				DAE5355C1A02DCEA0016088C /* BCOVPlaybackSessionProvider.h in Headers */,
+				7412B2A11A8597DA003C6D52 /* BCOVPlayerSDK.h in Headers */,
+				7412B29E1A8597DA003C6D52 /* BCOVPlaybackController.h in Headers */,
+				7412B2991A8597DA003C6D52 /* BCOVCuePoint.h in Headers */,
 				DAD994101A03F01F006B2DB1 /* ComAppersonlabsBrightcovePlayerView.h in Headers */,
+				7412B29B1A8597DA003C6D52 /* BCOVCuePointProgressPolicy.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* ComAppersonlabsBrightcoveModuleAssets.h in Headers */,
-				DAE535571A02DCEA0016088C /* BCOVCuePointProgressPolicy.h in Headers */,
-				DAE535521A02DCEA0016088C /* BCOVBasicSessionProvider.h in Headers */,
-				DAE535551A02DCEA0016088C /* BCOVCuePoint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +364,10 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/vendor/brightcove-player-sdk-ios/Library";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/vendor/brightcove-player-sdk-ios/Library",
+					"$(PROJECT_DIR)/platform",
+				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
@@ -402,7 +405,10 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/vendor/brightcove-player-sdk-ios/Library";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/vendor/brightcove-player-sdk-ios/Library",
+					"$(PROJECT_DIR)/platform",
+				);
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ComAppersonlabsBrightcove;
